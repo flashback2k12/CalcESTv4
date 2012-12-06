@@ -1,0 +1,105 @@
+package view;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JCheckBox;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+
+import model.StartWerte;
+
+public class AnfangsBildschirm extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6889707067785278018L;
+	private JPanel contentPane;
+	private JTextField txtSteuerJahr;
+
+	/*
+	 * Initialisierung RadioButtons mit Default 0 = NOcheck
+	 */
+	int BUTTONGEHALTSSCHEIN = 0;
+	int BUTTONSPENDEN = 0;
+	int BUTTONKRANKHEITSKOSTEN = 0;	
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					AnfangsBildschirm frame = new AnfangsBildschirm();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	/**
+	 * Create the frame.
+	 */
+	public AnfangsBildschirm() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 330);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblBerechnungDerEinkommesteuer = new JLabel("Berechnung der Einkommesteuer");
+		lblBerechnungDerEinkommesteuer.setHorizontalAlignment(SwingConstants.CENTER);
+		lblBerechnungDerEinkommesteuer.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblBerechnungDerEinkommesteuer.setBounds(10, 10, 414, 20);
+		contentPane.add(lblBerechnungDerEinkommesteuer);
+		
+		JLabel lblSteuerjahr = new JLabel("Steuerjahr:");
+		lblSteuerjahr.setBounds(10, 50, 133, 14);
+		contentPane.add(lblSteuerjahr);
+		
+		txtSteuerJahr = new JTextField();
+		txtSteuerJahr.setBounds(153, 47, 140, 20);
+		contentPane.add(txtSteuerJahr);
+		txtSteuerJahr.setColumns(10);
+		
+		final JCheckBox chckbxGehaltsschein = new JCheckBox("Gehaltsschein");
+		chckbxGehaltsschein.setBounds(6, 80, 133, 23);
+		contentPane.add(chckbxGehaltsschein);
+		
+		JCheckBox chckbxSpenden = new JCheckBox("Spenden");
+		chckbxSpenden.setBounds(6, 110, 137, 23);
+		contentPane.add(chckbxSpenden);
+		
+		JCheckBox chckbxKrankheitskosten = new JCheckBox("Krankheitskosten");
+		chckbxKrankheitskosten.setBounds(6, 140, 137, 23);
+		contentPane.add(chckbxKrankheitskosten);
+		
+		JButton btnWeiter = new JButton("weiter");
+		btnWeiter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				StartWerte startWerte = new StartWerte(); 
+				startWerte.setSteuerJahr(Integer.parseInt(txtSteuerJahr.getText())); 
+				startWerte.setButtonGehaltsSchein(Integer.parseInt(chckbxGehaltsschein.getText()));
+				
+				GehaltsscheinBildschirm gsb = new GehaltsscheinBildschirm();
+				gsb.setVisible(true); 
+				
+			}
+		});
+		btnWeiter.setBounds(10, 258, 89, 23);
+		contentPane.add(btnWeiter);
+	}
+}

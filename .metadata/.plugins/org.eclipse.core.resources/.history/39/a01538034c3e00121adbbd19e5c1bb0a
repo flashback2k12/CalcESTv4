@@ -1,0 +1,37 @@
+package view;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+
+public class WerbungskostenBildschirm extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7451850392206958408L;
+	private JPanel contentPane;
+
+	/**
+	 * Create the frame.
+	 */
+	public WerbungskostenBildschirm() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 330);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblAngabenZuWerbungskosten = new JLabel("Angaben zu Werbungskosten");
+		lblAngabenZuWerbungskosten.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAngabenZuWerbungskosten.setVerticalAlignment(SwingConstants.BOTTOM);
+		lblAngabenZuWerbungskosten.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblAngabenZuWerbungskosten.setBounds(10, 11, 414, 14);
+		contentPane.add(lblAngabenZuWerbungskosten);
+	}
+
+}

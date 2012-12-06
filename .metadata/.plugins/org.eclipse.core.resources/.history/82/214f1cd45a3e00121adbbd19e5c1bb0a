@@ -1,0 +1,32 @@
+package view;
+
+import static org.junit.Assert.*;
+
+import model.StartWerte;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class AnfangsBildschirmTest {
+
+	@BeforeClass 
+	  public static void testSetup(){
+	    // Preparation of the unit tests
+	  }
+	  
+	  @AfterClass 
+	  public static void testCleanup(){
+	    // Teardown for data used by the unit tests
+	  }
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testAnfangsBildschirm() {
+		StartWerte sw = new StartWerte();
+
+		sw.setSteuerJahr(2012);
+
+//		assertEquals("Result", 2012, sw.setSteuerJahr(2012));
+
+	}
+}

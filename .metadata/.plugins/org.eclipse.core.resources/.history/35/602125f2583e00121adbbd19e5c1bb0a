@@ -1,0 +1,19 @@
+package view;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class AnfangsBildschirmTest {
+
+	@Test
+	public void testMain() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAnfangsBildschirm() {
+		fail("Not yet implemented");
+	}
+
+}

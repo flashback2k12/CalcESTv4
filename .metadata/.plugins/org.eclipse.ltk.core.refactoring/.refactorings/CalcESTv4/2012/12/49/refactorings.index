@@ -1,0 +1,14 @@
+1354565480570	Rename package 'modell'
+1354647404530	Delete element
+1354653080361	Encapsulate field 'steuerJahr'
+1354653091062	Encapsulate field 'buttonGehaltsSchein'
+1354653095820	Encapsulate field 'buttonSpenden'
+1354653100407	Encapsulate field 'buttonKrankheitsKosten'
+1354655604461	Delete element
+1354656150057	Delete element
+1354657060161	Delete element
+1354826522067	Encapsulate field 'bruttoGehalt'
+1354826571753	Encapsulate field 'lohnSteuer'
+1354826609303	Encapsulate field 'soliZuschlag'
+1354826671516	Encapsulate field 'krankenVers'
+1354826690251	Encapsulate field 'pflegeVers'

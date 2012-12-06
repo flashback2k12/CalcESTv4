@@ -1,0 +1,45 @@
+package model;
+
+public class StartWerte {
+
+	private int steuerJahr;
+	private int buttonGehaltsSchein;
+	private int buttonSpenden;
+	private int buttonKrankheitsKosten;
+
+	public StartWerte() {
+	}
+		
+	public int getSteuerJahr() {
+		return steuerJahr;
+	}
+
+	public void setSteuerJahr(int steuerJahr) {
+		this.steuerJahr = steuerJahr;
+	}
+
+	public int getButtonGehaltsSchein() {
+		return buttonGehaltsSchein;
+	}
+
+	public void setButtonGehaltsSchein(int buttonGehaltsSchein) {
+		this.buttonGehaltsSchein = buttonGehaltsSchein;
+	}
+
+	public int getButtonSpenden() {
+		return buttonSpenden;
+	}
+
+	public void setButtonSpenden(int buttonSpenden) {
+		this.buttonSpenden = buttonSpenden;
+	}
+
+	public int getButtonKrankheitsKosten() {
+		return buttonKrankheitsKosten;
+	}
+
+	public void setButtonKrankheitsKosten(int buttonKrankheitsKosten) {
+		this.buttonKrankheitsKosten = buttonKrankheitsKosten;
+	}
+	
+}

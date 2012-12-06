@@ -1,0 +1,22 @@
+package view;
+
+import static org.junit.Assert.*;
+
+import model.StartWerte;
+
+import org.junit.Test;
+
+public class AnfangsBildschirmTest {
+
+
+	@Test
+	public void testAnfangsBildschirm() {
+		StartWerte sw = new StartWerte();
+		
+		sw.setSteuerJahr(2012);
+		sw.setButtonGehaltsSchein(1);
+		sw.setButtonSpenden(0);
+		sw.setButtonKrankheitsKosten(3);
+	}
+
+}

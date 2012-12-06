@@ -1,0 +1,113 @@
+package view;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import javax.swing.JButton;
+
+import model.DataGehalt;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class AuswertungsBildschirm extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7313978973201692631L;
+	private JPanel contentPane;
+
+	
+	/**
+	 * Create the frame.
+	 */
+	public AuswertungsBildschirm() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 330);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblAuswertung = new JLabel("Auswertung");
+		lblAuswertung.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblAuswertung.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAuswertung.setBounds(10, 11, 414, 19);
+		contentPane.add(lblAuswertung);
+		
+		final JLabel lblJahresbruttogehalt = new JLabel("JahresBruttoGehalt:");
+		lblJahresbruttogehalt.setBounds(10, 40, 190, 14);
+		contentPane.add(lblJahresbruttogehalt);
+		
+		JLabel lblJahreslohnsteuer = new JLabel("JahresLohnsteuer:");
+		lblJahreslohnsteuer.setBounds(10, 70, 190, 14);
+		contentPane.add(lblJahreslohnsteuer);
+		
+		JLabel lblJahressolizuschlag = new JLabel("JahresSoliZuschlag:");
+		lblJahressolizuschlag.setBounds(10, 100, 190, 14);
+		contentPane.add(lblJahressolizuschlag);
+		
+		JLabel lblJahreskv = new JLabel("JahresKV:");
+		lblJahreskv.setBounds(10, 130, 190, 14);
+		contentPane.add(lblJahreskv);
+		
+		JLabel lblJahrespv = new JLabel("JahresPV:");
+		lblJahrespv.setBounds(10, 160, 190, 14);
+		contentPane.add(lblJahrespv);
+		
+		JLabel lblJahresav_1 = new JLabel("JahresAV:");
+		lblJahresav_1.setBounds(10, 190, 190, 14);
+		contentPane.add(lblJahresav_1);
+		
+		JLabel lblJahresrv = new JLabel("JahresRV:");
+		lblJahresrv.setBounds(10, 220, 190, 14);
+		contentPane.add(lblJahresrv);
+		
+		JLabel lblWerbungskosten = new JLabel("Werbungskosten:");
+		lblWerbungskosten.setBounds(223, 70, 190, 14);
+		contentPane.add(lblWerbungskosten);
+		
+		JLabel lblSummeEinkunft = new JLabel("Summe Einkunft:");
+		lblSummeEinkunft.setBounds(223, 40, 190, 14);
+		contentPane.add(lblSummeEinkunft);
+		
+		JLabel lblVorsorgeaufwand = new JLabel("Vorsorgeaufwand:");
+		lblVorsorgeaufwand.setBounds(223, 100, 190, 14);
+		contentPane.add(lblVorsorgeaufwand);
+		
+		JLabel lblSpenden = new JLabel("Spenden:");
+		lblSpenden.setBounds(223, 130, 190, 14);
+		contentPane.add(lblSpenden);
+		
+		JLabel lblAgb = new JLabel("agB: ");
+		lblAgb.setBounds(223, 160, 190, 14);
+		contentPane.add(lblAgb);
+		
+		JLabel lblZuVersteuerndesEinkommen = new JLabel("zu verst. Einkommen:");
+		lblZuVersteuerndesEinkommen.setBounds(223, 190, 190, 14);
+		contentPane.add(lblZuVersteuerndesEinkommen);
+		
+		JLabel lblBerechneteEst = new JLabel("berechnete ESt.:");
+		lblBerechneteEst.setBounds(223, 220, 190, 14);
+		contentPane.add(lblBerechneteEst);
+		
+		JLabel lblErstattungnachzahlung = new JLabel("Erstattung/Nachzahlung:");
+		lblErstattungnachzahlung.setBounds(223, 250, 201, 14);
+		contentPane.add(lblErstattungnachzahlung);
+		
+		JButton btnAuswertung = new JButton("Auswertung");
+		btnAuswertung.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				lblJahresbruttogehalt.setText(""+DataGehalt.dg.getBruttoGehalt()); 			
+			}
+		});
+		btnAuswertung.setBounds(10, 258, 91, 23);
+		contentPane.add(btnAuswertung);
+	}
+
+}
