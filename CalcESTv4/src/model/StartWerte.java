@@ -23,6 +23,12 @@ public class StartWerte {
 		this.buttonKrankheitsKosten = buttonKrankheitsKosten;
 	}
 */
+
+/*
+* Steuerjahr wird benoetigt zur Berechnung von Vorsorgeaufwendungen
+*/
+
+
 	public int getSteuerJahr() {
 		return steuerJahr;
 	}
@@ -39,6 +45,10 @@ public class StartWerte {
 		this.buttonGehaltsSchein = buttonGehaltsSchein;
 	}
 
+/*
+* wird eventuell benoetigt fuer switch-konstrukt --> 0 == 36 <--> 1 == gezahlte Spenden <--> hoechstbetragsabgleich
+*/
+
 	public int getButtonSpenden() {
 		return buttonSpenden;
 	}
@@ -46,6 +56,10 @@ public class StartWerte {
 	public void setButtonSpenden(int buttonSpenden) {
 		this.buttonSpenden = buttonSpenden;
 	}
+
+/*
+* wird eventuell benoetigt fuer switch-konstrukt --> 0 == 0 <--> 1 == gezahlte Kosten <--> kosten ./. agB = zumutbare Belastung
+*/
 
 	public int getButtonKrankheitsKosten() {
 		return buttonKrankheitsKosten;
