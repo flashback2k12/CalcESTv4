@@ -58,7 +58,7 @@ public class StartWerte {
 	}
 
 /*
-* wird eventuell benoetigt fuer switch-konstrukt --> 0 == 0 <--> 1 == gezahlte Kosten <--> kosten ./. agB = zumutbare Belastung
+* wird eventuell benoetigt fuer switch-konstrukt --> 0 == 0 <--> 1 == gezahlte Kosten <--> kosten ./. zumutbare Belastung = agB
 */
 
 	public int getButtonKrankheitsKosten() {
