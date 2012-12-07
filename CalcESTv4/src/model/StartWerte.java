@@ -37,6 +37,10 @@ public class StartWerte {
 		this.steuerJahr = steuerJahr;
 	}
 
+/*
+* gebrauch noch unklar
+*/
+
 	public int getButtonGehaltsSchein() {
 		return buttonGehaltsSchein;
 	}
