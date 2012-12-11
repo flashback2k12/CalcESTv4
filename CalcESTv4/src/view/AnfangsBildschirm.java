@@ -27,9 +27,8 @@ public class AnfangsBildschirm extends JFrame {
 	private JTextField txtSteuerJahr;
 
 	/*
-	 * Initialisierung RadioButtons mit Default 0 = NOcheck
+	 * Initialisierung CheckBoxButtons mit Default 0 = NOcheck
 	 */
-	int steuerJahr = 0;
 	int buttonGehaltsschein = 0;
 	int buttonSpenden = 0;
 	int buttonKrankheitsKosten = 0;
@@ -83,7 +82,11 @@ public class AnfangsBildschirm extends JFrame {
 		final JCheckBox chckbxGehaltsschein = new JCheckBox("Gehaltsschein");
 		chckbxGehaltsschein.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				buttonGehaltsschein = 1;
+			
+/*
+* Checkbox auf 1 setzen, wenn gecheckt + Wertuebergabe an StartWerte.java
+*/
+ 	                           buttonGehaltsschein = 1;
 				StartWerte.sw.setButtonGehaltsSchein(buttonGehaltsschein);
 				// StartWerte sw = new StartWerte(STEUERJAHR,
 				// BUTTONGEHALTSSCHEIN, BUTTONSPENDEN, BUTTONKRANKHEITSKOSTEN);
@@ -97,7 +100,10 @@ public class AnfangsBildschirm extends JFrame {
 		final JCheckBox chckbxSpenden = new JCheckBox("Spenden");
 		chckbxSpenden.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				buttonSpenden = 1;
+/*
+* Checkbox auf 1 setzen, wenn gecheckt + Wertuebergabe an StartWerte.java
+*/			
+	                           buttonSpenden = 1;
 				StartWerte.sw.setButtonSpenden(buttonSpenden);
 				// new StartWerte().setButtonSpenden(Integer.parseInt(chckbxSpenden.getText()));
 			}
@@ -109,7 +115,11 @@ public class AnfangsBildschirm extends JFrame {
 				"Krankheitskosten");
 		chckbxKrankheitskosten.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				buttonKrankheitsKosten = 1;
+			
+/*
+* Checkbox auf 1 setzen, wenn gecheckt + Wertuebergabe an StartWerte.java
+*/
+                              	buttonKrankheitsKosten = 1;
 				StartWerte.sw.setButtonKrankheitsKosten(buttonKrankheitsKosten);
 				// new StartWerte().setButtonKrankheitsKosten(Integer.parseInt(chckbxKrankheitskosten.getText()));
 			}
@@ -121,10 +131,16 @@ public class AnfangsBildschirm extends JFrame {
 		btnWeiter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
+/*
+* Wertuebergabe an StartWerte.java
+*/
 				StartWerte.sw.setSteuerJahr(Integer.parseInt(txtSteuerJahr.getText()));
 				// StartWerte sw = new StartWerte();
 				// sw.setSteuerJahr(Integer.parseInt(txtSteuerJahr.getText()));
 				// new StartWerte().setSteuerJahr(Integer.parseInt(txtSteuerJahr.getText()));
+/*
+* prüfen bei buttonClick "weiter" ob checkboxen geclickt, mindestens gehaltsschein muss 1 sein um zur naechsten GUI zu kommen, ansonsten InfoMeldung
+*/
 
 				if ((buttonGehaltsschein == 1) | (buttonGehaltsschein == 1) & (buttonSpenden == 1) & (buttonKrankheitsKosten == 1)) {
 					GehaltsscheinBildschirm gsb = new GehaltsscheinBildschirm();

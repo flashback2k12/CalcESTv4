@@ -112,15 +112,21 @@ public class GehaltsscheinBildschirm extends JFrame {
 		JButton btnWeiter = new JButton("weiter");
 		btnWeiter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				DataGehalt.dg.setBruttoGehalt(Double.parseDouble(txtBruttogehaltMonat.getText()));
+			
+/*
+* Wertuebergabe des Gehaltsscheins an DataGehalt.java durch ButtonClick "weiter"
+*/				
+                                    DataGehalt.dg.setBruttoGehalt(Double.parseDouble(txtBruttogehaltMonat.getText()));
 				DataGehalt.dg.setLohnSteuer(Double.parseDouble(txtLohnsteuerMonat.getText()));
 				DataGehalt.dg.setSoliZuschlag(Double.parseDouble(txtSolZMonat.getText()));
 				DataGehalt.dg.setKrankenVers(Double.parseDouble(txtKvMonat.getText()));
 				DataGehalt.dg.setPflegeVers(Double.parseDouble(txtPvMonat.getText()));
 				DataGehalt.dg.setArbeitslosenVers(Double.parseDouble(txtAvMonat.getText()));
 				DataGehalt.dg.setRentenVers(Double.parseDouble(txtRvMonat.getText()));
-				WerbungskostenBildschirm wkb = new WerbungskostenBildschirm();
+/*
+* neue GUI oeffnen
+*/				
+                                   WerbungskostenBildschirm wkb = new WerbungskostenBildschirm();
 				wkb.setVisible(true); 
 				
 			}
