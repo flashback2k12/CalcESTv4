@@ -116,13 +116,13 @@ public class GehaltsscheinBildschirm extends JFrame {
 /*
 * Wertuebergabe des Gehaltsscheins an DataGehalt.java durch ButtonClick "weiter"
 */				
-                                    DataGehalt.dg.setBruttoGehalt(Double.parseDouble(txtBruttogehaltMonat.getText()));
-				DataGehalt.dg.setLohnSteuer(Double.parseDouble(txtLohnsteuerMonat.getText()));
-				DataGehalt.dg.setSoliZuschlag(Double.parseDouble(txtSolZMonat.getText()));
-				DataGehalt.dg.setKrankenVers(Double.parseDouble(txtKvMonat.getText()));
-				DataGehalt.dg.setPflegeVers(Double.parseDouble(txtPvMonat.getText()));
-				DataGehalt.dg.setArbeitslosenVers(Double.parseDouble(txtAvMonat.getText()));
-				DataGehalt.dg.setRentenVers(Double.parseDouble(txtRvMonat.getText()));
+                                    DataGehalt.dg.setBruttoGehaltJahr(Double.parseDouble(txtBruttogehaltMonat.getText()));
+				DataGehalt.dg.setLohnSteuerJahr(Double.parseDouble(txtLohnsteuerMonat.getText()));
+				DataGehalt.dg.setSoliZuschlagJahr(Double.parseDouble(txtSolZMonat.getText()));
+				DataGehalt.dg.setKrankenVersJahr(Double.parseDouble(txtKvMonat.getText()));
+				DataGehalt.dg.setPflegeVersJahr(Double.parseDouble(txtPvMonat.getText()));
+				DataGehalt.dg.setArbeitslosenVersJahr(Double.parseDouble(txtAvMonat.getText()));
+				DataGehalt.dg.setRentenVersJahr(Double.parseDouble(txtRvMonat.getText()));
 /*
 * neue GUI oeffnen
 */				
