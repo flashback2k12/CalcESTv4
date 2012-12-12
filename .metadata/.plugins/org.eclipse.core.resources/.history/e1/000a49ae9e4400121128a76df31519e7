@@ -1,0 +1,10 @@
+package model;
+
+public class WerbungsKosten {
+
+	public static WerbungsKosten wk = WerbungsKosten(); 
+	
+	private double EntfernungsKMWA; 
+	
+	
+}

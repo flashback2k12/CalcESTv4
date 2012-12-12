@@ -1,0 +1,32 @@
+package controller;
+
+public class Berechnungen {
+
+   public static double SummeEinkunft (double JahresBruttoLohn, double WerbungsKosten) {	
+	   		double SummeEinkunft = JahresBruttoLohn - WerbungsKosten;		
+	   		return Math.round(SummeEinkunft*100.00)/100.00;	
+  }
+   
+   public static double WerbungsKosten (int ArbeitsTage, double EntfernungWA, double ArbeitsMittelGezahlt, double TelefonKostenGezahlt) {
+	   
+	   double ENTFERNUNGSPAUSCHALE = 0.3;
+	   double Werbungskosten = 0;
+	   double ArbeitsMittelAbzug = 0;
+	   double TelefonKostenAbzug = 0;
+	   
+	   if (ArbeitsMittelGezahlt <= 110) 
+	   {
+		  ArbeitsMittelAbzug = ArbeitsMittelGezahlt; 
+	   }
+	   else 
+	   {
+		  ArbeitsMittelAbzug = Math.round(ArbeitsMittelGezahlt*100.00)/100.00; 
+	   }
+	   
+	   Werbungskosten = (ArbeitsTage*EntfernungWA*ENTFERNUNGSPAUSCHALE)+ArbeitsMittelAbzug+TelefonKostenAbzug; 
+	   	   
+	   return Math.round(Werbungskosten*100.00)/100.00; 
+   }
+   
+   
+}

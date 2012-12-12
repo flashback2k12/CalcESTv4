@@ -33,8 +33,7 @@ public class GehaltsscheinBildschirm extends JFrame {
 	 * Create the frame.
 	 */
 	public GehaltsscheinBildschirm() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 330);
+		setBounds(100, 100, 500, 330);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -43,7 +42,7 @@ public class GehaltsscheinBildschirm extends JFrame {
 		JLabel lblAngabenGehaltsschein = new JLabel("Angaben Gehaltsschein");
 		lblAngabenGehaltsschein.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAngabenGehaltsschein.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblAngabenGehaltsschein.setBounds(10, 10, 414, 20);
+		lblAngabenGehaltsschein.setBounds(10, 10, 464, 20);
 		contentPane.add(lblAngabenGehaltsschein);
 		
 		JLabel lblBruttogehalt = new JLabel("Bruttogehalt:");
@@ -75,58 +74,58 @@ public class GehaltsscheinBildschirm extends JFrame {
 		contentPane.add(lblRentenversicherung);
 				
 		txtBruttogehaltMonat = new JTextField();
-		txtBruttogehaltMonat.setBounds(180, 37, 140, 20);
+		txtBruttogehaltMonat.setBounds(220, 37, 140, 20);
 		contentPane.add(txtBruttogehaltMonat);
 		txtBruttogehaltMonat.setColumns(10);
 		
 		txtLohnsteuerMonat = new JTextField();
 		txtLohnsteuerMonat.setColumns(10);
-		txtLohnsteuerMonat.setBounds(180, 67, 140, 20);
+		txtLohnsteuerMonat.setBounds(220, 67, 140, 20);
 		contentPane.add(txtLohnsteuerMonat);
 		
 		txtSolZMonat = new JTextField();
 		txtSolZMonat.setColumns(10);
-		txtSolZMonat.setBounds(180, 97, 140, 20);
+		txtSolZMonat.setBounds(220, 97, 140, 20);
 		contentPane.add(txtSolZMonat);
 		
 		txtKvMonat = new JTextField();
 		txtKvMonat.setColumns(10);
-		txtKvMonat.setBounds(180, 127, 140, 20);
+		txtKvMonat.setBounds(220, 124, 140, 20);
 		contentPane.add(txtKvMonat);
 		
 		txtPvMonat = new JTextField();
 		txtPvMonat.setColumns(10);
-		txtPvMonat.setBounds(180, 157, 140, 20);
+		txtPvMonat.setBounds(220, 157, 140, 20);
 		contentPane.add(txtPvMonat);
 		
 		txtAvMonat = new JTextField();
 		txtAvMonat.setColumns(10);
-		txtAvMonat.setBounds(180, 187, 140, 20);
+		txtAvMonat.setBounds(220, 187, 140, 20);
 		contentPane.add(txtAvMonat);
 		
 		txtRvMonat = new JTextField();
 		txtRvMonat.setColumns(10);
-		txtRvMonat.setBounds(180, 217, 140, 20);
+		txtRvMonat.setBounds(220, 217, 140, 20);
 		contentPane.add(txtRvMonat);
 		
 		JButton btnWeiter = new JButton("weiter");
 		btnWeiter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
-/*
-* Wertuebergabe des Gehaltsscheins an DataGehalt.java durch ButtonClick "weiter"
-*/				
-                                    DataGehalt.dg.setBruttoGehaltJahr(Double.parseDouble(txtBruttogehaltMonat.getText()));
-				DataGehalt.dg.setLohnSteuerJahr(Double.parseDouble(txtLohnsteuerMonat.getText()));
-				DataGehalt.dg.setSoliZuschlagJahr(Double.parseDouble(txtSolZMonat.getText()));
-				DataGehalt.dg.setKrankenVersJahr(Double.parseDouble(txtKvMonat.getText()));
-				DataGehalt.dg.setPflegeVersJahr(Double.parseDouble(txtPvMonat.getText()));
-				DataGehalt.dg.setArbeitslosenVersJahr(Double.parseDouble(txtAvMonat.getText()));
-				DataGehalt.dg.setRentenVersJahr(Double.parseDouble(txtRvMonat.getText()));
-/*
-* neue GUI oeffnen
-*/				
-                                   WerbungskostenBildschirm wkb = new WerbungskostenBildschirm();
+				/*
+				 * Wertuebergabe des Gehaltsscheins an DataGehalt.java durch ButtonClick "weiter"
+				 */				
+                DataGehalt.dg.setBruttoGehalt(Double.parseDouble(txtBruttogehaltMonat.getText()));
+				DataGehalt.dg.setLohnSteuer(Double.parseDouble(txtLohnsteuerMonat.getText()));
+				DataGehalt.dg.setSoliZuschlag(Double.parseDouble(txtSolZMonat.getText()));
+				DataGehalt.dg.setKrankenVers(Double.parseDouble(txtKvMonat.getText()));
+				DataGehalt.dg.setPflegeVers(Double.parseDouble(txtPvMonat.getText()));
+				DataGehalt.dg.setArbeitslosenVers(Double.parseDouble(txtAvMonat.getText()));
+				DataGehalt.dg.setRentenVers(Double.parseDouble(txtRvMonat.getText()));
+				/*
+				 * neue GUI oeffnen
+				 */				
+                WerbungskostenBildschirm wkb = new WerbungskostenBildschirm();
 				wkb.setVisible(true); 
 				
 			}

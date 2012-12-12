@@ -12,6 +12,10 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import model.WerbungsKosten;
+
+import controller.OpenURL;
+
 public class WerbungskostenBildschirm extends JFrame {
 
 	/**
@@ -30,8 +34,7 @@ public class WerbungskostenBildschirm extends JFrame {
 	 * Create the frame.
 	 */
 	public WerbungskostenBildschirm() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 330);
+		setBounds(100, 100, 500, 330);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -40,11 +43,11 @@ public class WerbungskostenBildschirm extends JFrame {
 		JLabel lblAngabenZuWerbungskosten = new JLabel("Angaben zu Werbungskosten");
 		lblAngabenZuWerbungskosten.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAngabenZuWerbungskosten.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblAngabenZuWerbungskosten.setBounds(10, 11, 414, 20);
+		lblAngabenZuWerbungskosten.setBounds(10, 11, 464, 20);
 		contentPane.add(lblAngabenZuWerbungskosten);
 		
 		JLabel lblEntfernungWA = new JLabel("Entfernung Wohnung / Arbeit");
-		lblEntfernungWA.setBounds(10, 40, 160, 14);
+		lblEntfernungWA.setBounds(10, 40, 200, 14);
 		contentPane.add(lblEntfernungWA);
 		
 		JLabel lblArbeitstage = new JLabel("Arbeitstage:");
@@ -69,38 +72,50 @@ public class WerbungskostenBildschirm extends JFrame {
 		
 		txtEntfernungWA = new JTextField();
 		txtEntfernungWA.setColumns(10);
-		txtEntfernungWA.setBounds(180, 37, 140, 20);
+		txtEntfernungWA.setBounds(220, 37, 140, 20);
 		contentPane.add(txtEntfernungWA);
 		
 		txtArbeitstage = new JTextField();
 		txtArbeitstage.setColumns(10);
-		txtArbeitstage.setBounds(180, 67, 140, 20);
+		txtArbeitstage.setBounds(220, 67, 140, 20);
 		contentPane.add(txtArbeitstage);
 		
 		txtSpenden = new JTextField();
 		txtSpenden.setColumns(10);
-		txtSpenden.setBounds(180, 97, 140, 20);
+		txtSpenden.setBounds(220, 97, 140, 20);
 		contentPane.add(txtSpenden);
 		
 		txtKrankheitskosten = new JTextField();
 		txtKrankheitskosten.setColumns(10);
-		txtKrankheitskosten.setBounds(180, 127, 140, 20);
+		txtKrankheitskosten.setBounds(220, 127, 140, 20);
 		contentPane.add(txtKrankheitskosten);
 		
 		txtArbeitsmittel = new JTextField();
 		txtArbeitsmittel.setColumns(10);
-		txtArbeitsmittel.setBounds(180, 157, 140, 20);
+		txtArbeitsmittel.setBounds(220, 157, 140, 20);
 		contentPane.add(txtArbeitsmittel);
 		
 		txtTelefonkosten = new JTextField();
 		txtTelefonkosten.setColumns(10);
-		txtTelefonkosten.setBounds(180, 187, 140, 20);
+		txtTelefonkosten.setBounds(220, 187, 140, 20);
 		contentPane.add(txtTelefonkosten);
 		
 		JButton btnWeiter = new JButton("weiter");
 		btnWeiter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				/*
+				 * Wertuebergabe der Werbungskoten an WerbungsKosten.java durch ButtonClick "weiter"
+				 */	
+				WerbungsKosten.wk.setArbeitsTage(Integer.parseInt(txtArbeitstage.getText()));
+				WerbungsKosten.wk.setEntfernungsKMWA(Double.parseDouble(txtEntfernungWA.getText()));
+				WerbungsKosten.wk.setSpendenGezahlt(Double.parseDouble(txtSpenden.getText()));
+				WerbungsKosten.wk.setKrankheitsKostenGezahlt(Double.parseDouble(txtKrankheitskosten.getText()));
+				WerbungsKosten.wk.setArbeitsMittelGezahlt(Double.parseDouble(txtArbeitsmittel.getText()));;
+				WerbungsKosten.wk.setTelefonKostenGezahlt(Double.parseDouble(txtTelefonkosten.getText())); 
+				/*
+				 * neue GUI oeffnen
+				 */	
 				AuswertungsBildschirm aw = new AuswertungsBildschirm();
 				aw.setVisible(true); 
 				
@@ -113,13 +128,24 @@ public class WerbungskostenBildschirm extends JFrame {
 		btnGoogleMaps.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-//				openurl(...); 
+				OpenURL ourl = new OpenURL();
+				ourl.openURL("https://maps.google.de/maps?hl=de&tab=wl"); 
 				
 			}
 		});
-		btnGoogleMaps.setBounds(331, 258, 93, 23);
+		btnGoogleMaps.setBounds(347, 258, 127, 23);
 		contentPane.add(btnGoogleMaps);
+		
+		JButton btnWerbungskostenAbc = new JButton("Werbungskosten ABC");
+		btnWerbungskostenAbc.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				OpenURL ourl2 = new OpenURL();
+				ourl2.openURL("http://www.steuernsparen.de/steuerwiki/index.php/Werbungskosten");
+			}
+		});
+		btnWerbungskostenAbc.setBounds(163, 258, 160, 23);
+		contentPane.add(btnWerbungskostenAbc);
 	
 	}
-
 }

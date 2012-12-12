@@ -54,7 +54,7 @@ public class AnfangsBildschirm extends JFrame {
 	 */
 	public AnfangsBildschirm() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 330);
+		setBounds(100, 100, 500, 330);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -66,7 +66,7 @@ public class AnfangsBildschirm extends JFrame {
 				.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBerechnungDerEinkommesteuer.setFont(new Font("Tahoma", Font.PLAIN,
 				14));
-		lblBerechnungDerEinkommesteuer.setBounds(10, 10, 414, 20);
+		lblBerechnungDerEinkommesteuer.setBounds(10, 10, 464, 20);
 		contentPane.add(lblBerechnungDerEinkommesteuer);
 
 		final JLabel lblSteuerjahr = new JLabel("Steuerjahr:");
@@ -83,15 +83,11 @@ public class AnfangsBildschirm extends JFrame {
 		chckbxGehaltsschein.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
-/*
-* Checkbox auf 1 setzen, wenn gecheckt + Wertuebergabe an StartWerte.java
-*/
- 	                           buttonGehaltsschein = 1;
+				/*
+				 * Checkbox auf 1 setzen, wenn gecheckt + Wertuebergabe an StartWerte.java
+				 */
+ 	            buttonGehaltsschein = 1;
 				StartWerte.sw.setButtonGehaltsSchein(buttonGehaltsschein);
-				// StartWerte sw = new StartWerte(STEUERJAHR,
-				// BUTTONGEHALTSSCHEIN, BUTTONSPENDEN, BUTTONKRANKHEITSKOSTEN);
-				// sw.setSteuerJahr(Integer.parseInt(lblSteuerjahr.getText()));
-
 			}
 		});
 		chckbxGehaltsschein.setBounds(6, 80, 133, 23);
@@ -100,12 +96,11 @@ public class AnfangsBildschirm extends JFrame {
 		final JCheckBox chckbxSpenden = new JCheckBox("Spenden");
 		chckbxSpenden.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-/*
-* Checkbox auf 1 setzen, wenn gecheckt + Wertuebergabe an StartWerte.java
-*/			
-	                           buttonSpenden = 1;
+				/*
+				 * Checkbox auf 1 setzen, wenn gecheckt + Wertuebergabe an StartWerte.java
+				 */			
+	            buttonSpenden = 1;
 				StartWerte.sw.setButtonSpenden(buttonSpenden);
-				// new StartWerte().setButtonSpenden(Integer.parseInt(chckbxSpenden.getText()));
 			}
 		});
 		chckbxSpenden.setBounds(6, 110, 137, 23);
@@ -116,12 +111,11 @@ public class AnfangsBildschirm extends JFrame {
 		chckbxKrankheitskosten.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
-/*
-* Checkbox auf 1 setzen, wenn gecheckt + Wertuebergabe an StartWerte.java
-*/
-                              	buttonKrankheitsKosten = 1;
+				/*
+				 * Checkbox auf 1 setzen, wenn gecheckt + Wertuebergabe an StartWerte.java
+				 */
+                buttonKrankheitsKosten = 1;
 				StartWerte.sw.setButtonKrankheitsKosten(buttonKrankheitsKosten);
-				// new StartWerte().setButtonKrankheitsKosten(Integer.parseInt(chckbxKrankheitskosten.getText()));
 			}
 		});
 		chckbxKrankheitskosten.setBounds(6, 140, 137, 23);
@@ -131,17 +125,13 @@ public class AnfangsBildschirm extends JFrame {
 		btnWeiter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-/*
-* Wertuebergabe an StartWerte.java
-*/
+				/*
+				 * Wertuebergabe an StartWerte.java
+				 */
 				StartWerte.sw.setSteuerJahr(Integer.parseInt(txtSteuerJahr.getText()));
-				// StartWerte sw = new StartWerte();
-				// sw.setSteuerJahr(Integer.parseInt(txtSteuerJahr.getText()));
-				// new StartWerte().setSteuerJahr(Integer.parseInt(txtSteuerJahr.getText()));
-/*
-* prüfen bei buttonClick "weiter" ob checkboxen geclickt, mindestens gehaltsschein muss 1 sein um zur naechsten GUI zu kommen, ansonsten InfoMeldung
-*/
-
+				/*
+				 * pruefen bei buttonClick "weiter" ob checkboxen geclickt, mindestens gehaltsschein muss 1 sein um zur naechsten GUI zu kommen, ansonsten InfoMeldung
+				 */
 				if ((buttonGehaltsschein == 1) | (buttonGehaltsschein == 1) & (buttonSpenden == 1) & (buttonKrankheitsKosten == 1)) {
 					GehaltsscheinBildschirm gsb = new GehaltsscheinBildschirm();
 					gsb.setVisible(true);

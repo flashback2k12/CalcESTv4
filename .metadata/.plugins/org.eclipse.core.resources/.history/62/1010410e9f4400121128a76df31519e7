@@ -1,0 +1,12 @@
+package model;
+
+public class WerbungsKosten {
+
+	public static WerbungsKosten wk = new WerbungsKosten(); 
+	
+	private int ArbeitsTage;
+	private double EntfernungsKMWA;
+	
+	
+	
+}

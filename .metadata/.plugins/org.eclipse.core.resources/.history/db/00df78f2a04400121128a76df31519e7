@@ -1,0 +1,139 @@
+package view;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
+import model.DataGehalt;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class GehaltsscheinBildschirm extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2231022529019429487L;
+	private JPanel contentPane;
+	private JTextField txtBruttogehaltMonat;
+	private JTextField txtLohnsteuerMonat;
+	private JTextField txtSolZMonat;
+	private JTextField txtKvMonat;
+	private JTextField txtPvMonat;
+	private JTextField txtAvMonat;
+	private JTextField txtRvMonat;
+
+	/**
+	 * Create the frame.
+	 */
+	public GehaltsscheinBildschirm() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 500, 330);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblAngabenGehaltsschein = new JLabel("Angaben Gehaltsschein");
+		lblAngabenGehaltsschein.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAngabenGehaltsschein.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblAngabenGehaltsschein.setBounds(10, 10, 464, 20);
+		contentPane.add(lblAngabenGehaltsschein);
+		
+		JLabel lblBruttogehalt = new JLabel("Bruttogehalt:");
+		lblBruttogehalt.setBounds(10, 40, 160, 14);
+		contentPane.add(lblBruttogehalt);
+		
+		JLabel lblLohnsteuer = new JLabel("Lohnsteuer:");
+		lblLohnsteuer.setBounds(10, 70, 160, 14);
+		contentPane.add(lblLohnsteuer);
+		
+		JLabel lblSolidarittszuschlag = new JLabel("Solidarit\u00E4tszuschlag:");
+		lblSolidarittszuschlag.setBounds(10, 100, 160, 14);
+		contentPane.add(lblSolidarittszuschlag);
+		
+		JLabel lblKrankenversicherung = new JLabel("Krankenversicherung:");
+		lblKrankenversicherung.setBounds(10, 130, 160, 14);
+		contentPane.add(lblKrankenversicherung);
+		
+		JLabel lblPflegeversicherung = new JLabel("Pflegeversicherung:");
+		lblPflegeversicherung.setBounds(10, 160, 160, 14);
+		contentPane.add(lblPflegeversicherung);
+		
+		JLabel lblArbeitslosenversicherung = new JLabel("Arbeitslosenversicherung:");
+		lblArbeitslosenversicherung.setBounds(10, 190, 160, 14);
+		contentPane.add(lblArbeitslosenversicherung);
+		
+		JLabel lblRentenversicherung = new JLabel("Rentenversicherung:");
+		lblRentenversicherung.setBounds(10, 220, 160, 14);
+		contentPane.add(lblRentenversicherung);
+				
+		txtBruttogehaltMonat = new JTextField();
+		txtBruttogehaltMonat.setBounds(220, 37, 140, 20);
+		contentPane.add(txtBruttogehaltMonat);
+		txtBruttogehaltMonat.setColumns(10);
+		
+		txtLohnsteuerMonat = new JTextField();
+		txtLohnsteuerMonat.setColumns(10);
+		txtLohnsteuerMonat.setBounds(220, 67, 140, 20);
+		contentPane.add(txtLohnsteuerMonat);
+		
+		txtSolZMonat = new JTextField();
+		txtSolZMonat.setColumns(10);
+		txtSolZMonat.setBounds(220, 97, 140, 20);
+		contentPane.add(txtSolZMonat);
+		
+		txtKvMonat = new JTextField();
+		txtKvMonat.setColumns(10);
+		txtKvMonat.setBounds(220, 124, 140, 20);
+		contentPane.add(txtKvMonat);
+		
+		txtPvMonat = new JTextField();
+		txtPvMonat.setColumns(10);
+		txtPvMonat.setBounds(220, 157, 140, 20);
+		contentPane.add(txtPvMonat);
+		
+		txtAvMonat = new JTextField();
+		txtAvMonat.setColumns(10);
+		txtAvMonat.setBounds(220, 187, 140, 20);
+		contentPane.add(txtAvMonat);
+		
+		txtRvMonat = new JTextField();
+		txtRvMonat.setColumns(10);
+		txtRvMonat.setBounds(220, 217, 140, 20);
+		contentPane.add(txtRvMonat);
+		
+		JButton btnWeiter = new JButton("weiter");
+		btnWeiter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				/*
+				 * Wertuebergabe des Gehaltsscheins an DataGehalt.java durch ButtonClick "weiter"
+				 */				
+                DataGehalt.dg.setBruttoGehalt(Double.parseDouble(txtBruttogehaltMonat.getText()));
+				DataGehalt.dg.setLohnSteuer(Double.parseDouble(txtLohnsteuerMonat.getText()));
+				DataGehalt.dg.setSoliZuschlag(Double.parseDouble(txtSolZMonat.getText()));
+				DataGehalt.dg.setKrankenVers(Double.parseDouble(txtKvMonat.getText()));
+				DataGehalt.dg.setPflegeVers(Double.parseDouble(txtPvMonat.getText()));
+				DataGehalt.dg.setArbeitslosenVers(Double.parseDouble(txtAvMonat.getText()));
+				DataGehalt.dg.setRentenVers(Double.parseDouble(txtRvMonat.getText()));
+				/*
+				 * neue GUI oeffnen
+				 */				
+                WerbungskostenBildschirm wkb = new WerbungskostenBildschirm();
+				wkb.setVisible(true); 
+				
+			}
+		});
+		btnWeiter.setBounds(10, 258, 89, 23);
+		contentPane.add(btnWeiter);
+		
+	}
+
+}

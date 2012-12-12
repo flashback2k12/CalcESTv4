@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="view.GehaltsScheinBildschirm"/>
-<fullyQualifiedTypeName name="view.WerbungskostenBildschirm"/>
 <fullyQualifiedTypeName name="view.AuswertungsBildschirm"/>
 <fullyQualifiedTypeName name="javax.swing.JCheckBox"/>
 <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
 <fullyQualifiedTypeName name="org.junit.BeforeClass"/>
 <fullyQualifiedTypeName name="org.junit.AfterClass"/>
 <fullyQualifiedTypeName name="view.AnfangsBildschirm"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="model.StartWerte"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="view.WerbungskostenBildschirm"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.lang.Double"/>
+<fullyQualifiedTypeName name="controller.OpenURL"/>
+<fullyQualifiedTypeName name="model.WerbungsKosten"/>
+<fullyQualifiedTypeName name="javax.xml.crypto.Data"/>
 <fullyQualifiedTypeName name="model.DataGehalt"/>
+<fullyQualifiedTypeName name="controller.Berechnungen"/>
 </qualifiedTypeNameHistroy>
