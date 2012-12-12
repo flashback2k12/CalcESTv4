@@ -16,7 +16,6 @@ public class DataGehalt {
 /*
 * Monatswert einlesen
 */	
-	
 	public double getBruttoGehalt() {
 		return bruttoGehalt;
 	}
@@ -24,15 +23,13 @@ public class DataGehalt {
 /*
 * Jahreswert ausgeben
 */
-
-	public void setBruttoGehalt(double bruttoGehalt) {
+	public void setBruttoGehaltJahr(double bruttoGehalt) {
 		this.bruttoGehalt = bruttoGehalt * 12;
 	}
 
 /*
 * Monatswert einlesen
 */
-
 	public double getLohnSteuer() {
 		return lohnSteuer;
 	}
@@ -41,15 +38,13 @@ public class DataGehalt {
 /*
 * Jahreswert ausgeben
 */
-
-	public void setLohnSteuer(double lohnSteuer) {
+	public void setLohnSteuerJahr(double lohnSteuer) {
 		this.lohnSteuer = lohnSteuer * 12;
 	}
 
 /*
 * Monatswert einlesen
 */
-
 	public double getSoliZuschlag() {
 		return soliZuschlag;
 	}
@@ -57,7 +52,6 @@ public class DataGehalt {
 /*
 * Jahreswert ausgeben
 */
-
 	public void setSoliZuschlag(double soliZuschlag) {
 		this.soliZuschlag = soliZuschlag * 12;
 	}
@@ -65,7 +59,6 @@ public class DataGehalt {
 /*
 * Monatswert einlesen
 */
-
 	public double getKrankenVers() {
 		return krankenVers;
 	}
@@ -73,15 +66,13 @@ public class DataGehalt {
 /*
 * Jahreswert ausgeben
 */
-
-	public void setKrankenVers(double krankenVers) {
+	public void setKrankenVersJahr(double krankenVers) {
 		this.krankenVers = krankenVers * 12;
 	}
 
 /*
 * Monatswert einlesen
 */
-
 	public double getPflegeVers() {
 		return pflegeVers;
 	}
@@ -89,15 +80,13 @@ public class DataGehalt {
 /*
 * Jahreswert ausgeben
 */
-
-	public void setPflegeVers(double pflegeVers) {
+	public void setPflegeVersJahr(double pflegeVers) {
 		this.pflegeVers = pflegeVers * 12;
 	}
 	
 /*
 * Monatswert einlesen
 */
-
 	public double getArbeitslosenVers() {
 		return arbeitslosenVers;
 	}
@@ -105,15 +94,13 @@ public class DataGehalt {
 /*
 * Jahreswert ausgeben
 */
-
-	public void setArbeitslosenVers(double arbeitslosenVers) {
+	public void setArbeitslosenVersJahr(double arbeitslosenVers) {
 		this.arbeitslosenVers = arbeitslosenVers * 12;
 	}
 
 /*
 * Monatswert einlesen
 */
-
 	public double getRentenVers() {
 		return rentenVers;
 	}
@@ -121,8 +108,7 @@ public class DataGehalt {
 /*
 * Jahreswert ausgeben
 */
-
-	public void setRentenVers(double rentenVers) {
+	public void setRentenVersJahr(double rentenVers) {
 		this.rentenVers = rentenVers;
 	}
 	
