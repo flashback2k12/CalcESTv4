@@ -2,4 +2,11 @@ package controller;
 
 public class Berechnungen {
 
+
+   public static double SummeEinkunft (double JahresBruttoLohn, double WerbungsKosten) {	
+	double SummeEinkunft = JahresBruttoLohn - WerbungsKosten;		
+         return Math.round(SummeEinkunft*100.00)/100.00;	
+
+  }
+
 }
