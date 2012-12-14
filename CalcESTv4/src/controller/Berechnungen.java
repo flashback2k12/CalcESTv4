@@ -18,13 +18,13 @@ public class Berechnungen {
 		double WerbungsKostenGezahlt = 0.0;
 
 		if (ArbeitsMittelGezahlt <= 110.0) {
-			ArbeitsMittelAbzug = ArbeitsMittelGezahlt;
+			ArbeitsMittelAbzug = 110.0;
 		} else {
 			ArbeitsMittelAbzug = Math.round(ArbeitsMittelGezahlt * 100.00) / 100.00;
 		}
 
 		if (TelefonKostenGezahlt <= 240.0) {
-			TelefonKostenAbzug = TelefonKostenGezahlt;
+			TelefonKostenAbzug = 240.0;
 		} else {
 			TelefonKostenAbzug = Math.round(TelefonKostenGezahlt * 100.00) / 100.00;
 		}
